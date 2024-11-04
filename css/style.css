@@ -19,6 +19,7 @@ display: inline-block;
 
 input{
 padding: 4px 15px 4px 5px;
+width: calc(100% - 36px);
 }
 
 #button{
@@ -37,7 +38,10 @@ opacity: .8;}
 
 ol {padding-left: 20px;}
 
-ol li {padding: 5px;color:#000;}
+ol li {padding: 5px;
+	color:#000;
+	position: relative;
+}
 
 ol li:nth-child(even){background: #dfdfdf;}
 
@@ -51,10 +55,15 @@ li:hover{
 	display: none;
 }
 
-li > crossOutButton {
+li > .crossOutButton {
 	background: none;
 	border: none;
 	float: right;
 	color: #025f70;
 	font-weight: 800;
+}
+
+.crossOutButton:hover {
+	text-decoration: underline;
+	cursor: pointer;
 }
