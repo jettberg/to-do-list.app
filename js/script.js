@@ -1,36 +1,36 @@
 
-$(document).ready(function() {
-     
+$(document).ready(function () {
+
   function newItem() {
 
-let inputValue = $('input').val();
-if (inputValue === '') {
-  alert("You have to add something!");
-} else {
-  let li = $('<li></li>').text(inputValue);
-  $('#list').append(li);
-  $('input').val('');
-}
+    let inputValue = $('input').val();
+    if (inputValue === '') {
+      alert("You have to add something!");
+    } else {
+      let li = $('<li></li>').text(inputValue);
+      $('#list').append(li);
+      $('input').val('');
+    }
 
-li.on("dbclick", function() {
-  li.toggleClass("strike");
+    li.on("dblclick", function () {
+      li.toggleClass("strike");
+    });
+
+    let crossOutButton = $('<button class= "crossOutButton">X</button>');
+    li.append(crossOutButton);
+
+    crossOutButton.on("click", function () {
+      li.addClass("delete");
+    });
+  }
+
+
+  $('#list').sortable();
+  $('#list').disableSelection();
+  $('#button').on('click', newItem);
+
 });
 
-let crossOutButton = $('<button class= "crossOutButton">X</button>');
-li.append(crossOutButton);
-
-crossOutButton.on("click", function () {
-li.addClass("delete");
-});
-
-$('#list').append(li);
-$('#input').val('');
-}
-
-$('#button').on('click', newItem);
-    
-}); 
-    
     
     
 
